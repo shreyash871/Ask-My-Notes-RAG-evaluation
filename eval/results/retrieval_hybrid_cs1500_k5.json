@@ -1,0 +1,714 @@
+{
+  "mode": "hybrid",
+  "config": {
+    "chunk_size": 1500,
+    "overlap": 200,
+    "model": "all-MiniLM-L6-v2",
+    "n_chunks": 1263
+  },
+  "k": 5,
+  "overall": {
+    "n": 30,
+    "hit@5": 0.8,
+    "recall@5": 0.577,
+    "mrr": 0.568
+  },
+  "by_type": {
+    "factual": {
+      "n": 10,
+      "hit@5": 0.7,
+      "recall@5": 0.617,
+      "mrr": 0.583
+    },
+    "numeric": {
+      "n": 10,
+      "hit@5": 0.9,
+      "recall@5": 0.363,
+      "mrr": 0.42
+    },
+    "risk": {
+      "n": 10,
+      "hit@5": 0.8,
+      "recall@5": 0.75,
+      "mrr": 0.7
+    }
+  },
+  "by_company": {
+    "AAPL": {
+      "n": 6,
+      "hit@5": 0.833,
+      "recall@5": 0.575,
+      "mrr": 0.556
+    },
+    "AMZN": {
+      "n": 6,
+      "hit@5": 1.0,
+      "recall@5": 0.681,
+      "mrr": 0.694
+    },
+    "GOOGL": {
+      "n": 6,
+      "hit@5": 0.833,
+      "recall@5": 0.608,
+      "mrr": 0.506
+    },
+    "META": {
+      "n": 6,
+      "hit@5": 0.667,
+      "recall@5": 0.569,
+      "mrr": 0.583
+    },
+    "MSFT": {
+      "n": 6,
+      "hit@5": 0.667,
+      "recall@5": 0.45,
+      "mrr": 0.5
+    }
+  },
+  "per_question": [
+    {
+      "id": "q001",
+      "company": "AMZN",
+      "question": "What are Amazon's three reportable segments?",
+      "gold_chunk_ids": [
+        151
+      ],
+      "answer": "North America, International, and AWS",
+      "type": "factual",
+      "hit": 1.0,
+      "recall": 1.0,
+      "rr": 1.0,
+      "retrieved": [
+        151,
+        345,
+        261,
+        1096,
+        346
+      ]
+    },
+    {
+      "id": "q002",
+      "company": "AMZN",
+      "question": "What does Amazon's AWS segment sell?",
+      "gold_chunk_ids": [
+        346
+      ],
+      "answer": "Compute, storage, database, and other services for start-ups, enterprises, government agencies, and academic institutions",
+      "type": "factual",
+      "hit": 1.0,
+      "recall": 1.0,
+      "rr": 0.3333333333333333,
+      "retrieved": [
+        352,
+        260,
+        346,
+        345,
+        153
+      ]
+    },
+    {
+      "id": "q003",
+      "company": "AMZN",
+      "question": "What were AWS net sales in fiscal year 2025?",
+      "gold_chunk_ids": [
+        230,
+        348,
+        349
+      ],
+      "answer": "$128,725 million",
+      "type": "numeric",
+      "hit": 1.0,
+      "recall": 0.3333333333333333,
+      "rr": 1.0,
+      "retrieved": [
+        230,
+        231,
+        347,
+        350,
+        229
+      ]
+    },
+    {
+      "id": "q004",
+      "company": "AMZN",
+      "question": "What were Amazon's total consolidated net sales in fiscal year 2025?",
+      "gold_chunk_ids": [
+        230,
+        348,
+        349,
+        351
+      ],
+      "answer": "$716,924 million",
+      "type": "numeric",
+      "hit": 1.0,
+      "recall": 0.25,
+      "rr": 0.3333333333333333,
+      "retrieved": [
+        347,
+        255,
+        230,
+        231,
+        350
+      ]
+    },
+    {
+      "id": "q005",
+      "company": "AMZN",
+      "question": "How does foreign exchange rate fluctuation affect Amazon according to its risk factors?",
+      "gold_chunk_ids": [
+        176
+      ],
+      "answer": "Its international stores and offerings are exposed to foreign exchange fluctuations, so operating results may differ materially from expectations",
+      "type": "risk",
+      "hit": 1.0,
+      "recall": 1.0,
+      "rr": 0.5,
+      "retrieved": [
+        247,
+        176,
+        60,
+        246,
+        59
+      ]
+    },
+    {
+      "id": "q006",
+      "company": "AMZN",
+      "question": "What labor-related risk does Amazon describe for its fulfillment and transportation operations?",
+      "gold_chunk_ids": [
+        182,
+        183
+      ],
+      "answer": "It and its co-sourcers may be unable to adequately staff fulfillment and transportation due to labor market constraints",
+      "type": "risk",
+      "hit": 1.0,
+      "recall": 0.5,
+      "rr": 1.0,
+      "retrieved": [
+        182,
+        181,
+        167,
+        271,
+        179
+      ]
+    },
+    {
+      "id": "q007",
+      "company": "AAPL",
+      "question": "What were Apple's total net sales in fiscal year 2025?",
+      "gold_chunk_ids": [
+        69,
+        70,
+        80,
+        81,
+        93,
+        94,
+        126,
+        127
+      ],
+      "answer": "$416,161 million",
+      "type": "numeric",
+      "hit": 1.0,
+      "recall": 0.2,
+      "rr": 0.3333333333333333,
+      "retrieved": [
+        66,
+        72,
+        94,
+        87,
+        67
+      ]
+    },
+    {
+      "id": "q008",
+      "company": "AAPL",
+      "question": "What were Apple's Services net sales in fiscal year 2025?",
+      "gold_chunk_ids": [
+        70,
+        80,
+        81,
+        93
+      ],
+      "answer": "$109,158 million",
+      "type": "numeric",
+      "hit": 1.0,
+      "recall": 0.25,
+      "rr": 0.5,
+      "retrieved": [
+        66,
+        70,
+        94,
+        87,
+        67
+      ]
+    },
+    {
+      "id": "q009",
+      "company": "AAPL",
+      "question": "When does Apple's fiscal year end?",
+      "gold_chunk_ids": [
+        0,
+        66,
+        67,
+        87
+      ],
+      "answer": "The 52- or 53-week period ending on the last Saturday of September",
+      "type": "factual",
+      "hit": 1.0,
+      "recall": 1.0,
+      "rr": 1.0,
+      "retrieved": [
+        67,
+        87,
+        66,
+        0,
+        75
+      ]
+    },
+    {
+      "id": "q010",
+      "company": "AAPL",
+      "question": "What does Apple manufacture and sell?",
+      "gold_chunk_ids": [
+        0
+      ],
+      "answer": "Smartphones, personal computers, tablets, wearables and accessories, plus related services",
+      "type": "factual",
+      "hit": 0.0,
+      "recall": 0.0,
+      "rr": 0.0,
+      "retrieved": [
+        8,
+        22,
+        62,
+        92,
+        47
+      ]
+    },
+    {
+      "id": "q011",
+      "company": "AAPL",
+      "question": "How can trade restrictions such as tariffs affect Apple's business?",
+      "gold_chunk_ids": [
+        16
+      ],
+      "answer": "They can materially adversely affect its business and supply chain, especially if applied to countries where its manufacturing is concentrated",
+      "type": "risk",
+      "hit": 1.0,
+      "recall": 1.0,
+      "rr": 0.5,
+      "retrieved": [
+        17,
+        16,
+        68,
+        48,
+        18
+      ]
+    },
+    {
+      "id": "q012",
+      "company": "AAPL",
+      "question": "Which regions were covered by the new U.S. tariffs announced in 2025 that Apple cites as a risk?",
+      "gold_chunk_ids": [
+        17
+      ],
+      "answer": "China, India, Japan, South Korea, Taiwan, Vietnam and the European Union, among others",
+      "type": "risk",
+      "hit": 1.0,
+      "recall": 1.0,
+      "rr": 1.0,
+      "retrieved": [
+        17,
+        67,
+        18,
+        68,
+        16
+      ]
+    },
+    {
+      "id": "q013",
+      "company": "MSFT",
+      "question": "What was Microsoft's total revenue in fiscal year 2026?",
+      "gold_chunk_ids": [
+        1100,
+        1103,
+        1104,
+        1142,
+        1228
+      ],
+      "answer": "$331,839 million",
+      "type": "numeric",
+      "hit": 1.0,
+      "recall": 0.2,
+      "rr": 0.5,
+      "retrieved": [
+        1229,
+        1104,
+        1110,
+        1101,
+        1205
+      ]
+    },
+    {
+      "id": "q014",
+      "company": "MSFT",
+      "question": "What was Microsoft Cloud revenue in fiscal year 2026?",
+      "gold_chunk_ids": [
+        1091,
+        1230
+      ],
+      "answer": "$214.4 billion, up 27%",
+      "type": "numeric",
+      "hit": 1.0,
+      "recall": 1.0,
+      "rr": 0.5,
+      "retrieved": [
+        1229,
+        1091,
+        1101,
+        1104,
+        1230
+      ]
+    },
+    {
+      "id": "q015",
+      "company": "MSFT",
+      "question": "What are Microsoft's three reportable segments?",
+      "gold_chunk_ids": [
+        1096,
+        1224
+      ],
+      "answer": "Productivity and Business Processes, Intelligent Cloud, and More Personal Computing",
+      "type": "factual",
+      "hit": 1.0,
+      "recall": 0.5,
+      "rr": 1.0,
+      "retrieved": [
+        1096,
+        1223,
+        984,
+        1227,
+        1097
+      ]
+    },
+    {
+      "id": "q016",
+      "company": "MSFT",
+      "question": "Did any single customer or country other than the U.S. account for more than 10% of Microsoft's revenue?",
+      "gold_chunk_ids": [
+        1228,
+        1229
+      ],
+      "answer": "No. No individual customer or country other than the United States exceeded 10% of revenue in fiscal years 2026, 2025, or 2024",
+      "type": "factual",
+      "hit": 1.0,
+      "recall": 1.0,
+      "rr": 1.0,
+      "retrieved": [
+        1229,
+        1228,
+        1100,
+        1231,
+        1177
+      ]
+    },
+    {
+      "id": "q017",
+      "company": "MSFT",
+      "question": "How does Microsoft say foreign exchange rates affect its results?",
+      "gold_chunk_ids": [
+        1086,
+        1095
+      ],
+      "answer": "Significant fluctuations between the U.S. dollar and foreign currencies could adversely affect revenue, expenses and results of operations, despite partial hedging",
+      "type": "risk",
+      "hit": 0.0,
+      "recall": 0.0,
+      "rr": 0.0,
+      "retrieved": [
+        1087,
+        1141,
+        246,
+        245,
+        60
+      ]
+    },
+    {
+      "id": "q018",
+      "company": "MSFT",
+      "question": "Which specific AI regulation does Microsoft cite as a risk to its European business?",
+      "gold_chunk_ids": [
+        1066
+      ],
+      "answer": "The EU's AI Act, which may increase costs or affect the provision or operation of its AI models and services in Europe",
+      "type": "risk",
+      "hit": 0.0,
+      "recall": 0.0,
+      "rr": 0.0,
+      "retrieved": [
+        1065,
+        415,
+        1070,
+        1011,
+        664
+      ]
+    },
+    {
+      "id": "q019",
+      "company": "GOOGL",
+      "question": "What were Alphabet's total revenues in 2025?",
+      "gold_chunk_ids": [
+        460,
+        525,
+        526,
+        527,
+        595
+      ],
+      "answer": "$402,836 million",
+      "type": "numeric",
+      "hit": 1.0,
+      "recall": 0.4,
+      "rr": 0.3333333333333333,
+      "retrieved": [
+        464,
+        458,
+        525,
+        463,
+        460
+      ]
+    },
+    {
+      "id": "q020",
+      "company": "GOOGL",
+      "question": "What was Google Cloud revenue in 2025?",
+      "gold_chunk_ids": [
+        460,
+        525,
+        526,
+        595
+      ],
+      "answer": "$58,705 million",
+      "type": "numeric",
+      "hit": 1.0,
+      "recall": 0.25,
+      "rr": 0.2,
+      "retrieved": [
+        462,
+        467,
+        527,
+        458,
+        460
+      ]
+    },
+    {
+      "id": "q021",
+      "company": "GOOGL",
+      "question": "What share of Alphabet's 2025 revenue came from online advertising, and why is that a risk?",
+      "gold_chunk_ids": [
+        376
+      ],
+      "answer": "More than 70%; advertisers and partners can terminate contracts at any time, and ad-blocking or personalization limits could harm the business",
+      "type": "risk",
+      "hit": 1.0,
+      "recall": 1.0,
+      "rr": 1.0,
+      "retrieved": [
+        376,
+        821,
+        446,
+        800,
+        493
+      ]
+    },
+    {
+      "id": "q022",
+      "company": "GOOGL",
+      "question": "What are Alphabet's reportable segments?",
+      "gold_chunk_ids": [
+        355,
+        442,
+        466,
+        593
+      ],
+      "answer": "Google Services, Google Cloud, and Other Bets",
+      "type": "factual",
+      "hit": 0.0,
+      "recall": 0.0,
+      "rr": 0.0,
+      "retrieved": [
+        1096,
+        123,
+        88,
+        594,
+        1223
+      ]
+    },
+    {
+      "id": "q023",
+      "company": "GOOGL",
+      "question": "What products and services are included in Alphabet's Google Services segment?",
+      "gold_chunk_ids": [
+        593
+      ],
+      "answer": "Ads, Android, Chrome, devices, Google Maps, Google Play, Search, and YouTube",
+      "type": "factual",
+      "hit": 1.0,
+      "recall": 1.0,
+      "rr": 0.5,
+      "retrieved": [
+        360,
+        593,
+        442,
+        466,
+        595
+      ]
+    },
+    {
+      "id": "q024",
+      "company": "GOOGL",
+      "question": "Which parts of Alphabet's business are the subject of antitrust lawsuits by the U.S. Department of Justice and others?",
+      "gold_chunk_ids": [
+        420
+      ],
+      "answer": "Its advertising technologies and practices, the operation and distribution of Google Search, and the operation and distribution of Android and the Play Store",
+      "type": "risk",
+      "hit": 1.0,
+      "recall": 1.0,
+      "rr": 1.0,
+      "retrieved": [
+        420,
+        54,
+        53,
+        570,
+        563
+      ]
+    },
+    {
+      "id": "q025",
+      "company": "META",
+      "question": "What was Meta's total revenue in 2025?",
+      "gold_chunk_ids": [
+        790,
+        820,
+        890,
+        891
+      ],
+      "answer": "$200,966 million (about $200.97 billion), up 22% from 2024",
+      "type": "numeric",
+      "hit": 1.0,
+      "recall": 0.75,
+      "rr": 0.5,
+      "retrieved": [
+        822,
+        820,
+        821,
+        790,
+        891
+      ]
+    },
+    {
+      "id": "q026",
+      "company": "META",
+      "question": "What was Meta's Reality Labs revenue in 2025?",
+      "gold_chunk_ids": [
+        820,
+        890
+      ],
+      "answer": "$2,207 million",
+      "type": "numeric",
+      "hit": 0.0,
+      "recall": 0.0,
+      "rr": 0.0,
+      "retrieved": [
+        821,
+        691,
+        791,
+        790,
+        826
+      ]
+    },
+    {
+      "id": "q027",
+      "company": "META",
+      "question": "What are Meta's reportable segments?",
+      "gold_chunk_ids": [
+        623,
+        859,
+        960
+      ],
+      "answer": "Two: Family of Apps (FoA) and Reality Labs (RL)",
+      "type": "factual",
+      "hit": 1.0,
+      "recall": 0.6666666666666666,
+      "rr": 1.0,
+      "retrieved": [
+        960,
+        1096,
+        859,
+        1223,
+        88
+      ]
+    },
+    {
+      "id": "q028",
+      "company": "META",
+      "question": "Which products are included in Meta's Family of Apps segment?",
+      "gold_chunk_ids": [
+        960
+      ],
+      "answer": "Facebook, Instagram, Messenger, WhatsApp, and other services",
+      "type": "factual",
+      "hit": 0.0,
+      "recall": 0.0,
+      "rr": 0.0,
+      "retrieved": [
+        623,
+        624,
+        820,
+        813,
+        961
+      ]
+    },
+    {
+      "id": "q029",
+      "company": "META",
+      "question": "What aspect of Meta's business did the European Commission investigate under the Digital Markets Act?",
+      "gold_chunk_ids": [
+        927,
+        928
+      ],
+      "answer": "Its 'subscription for no ads' consent model, for compliance with Article 5(2) of the DMA",
+      "type": "risk",
+      "hit": 1.0,
+      "recall": 1.0,
+      "rr": 1.0,
+      "retrieved": [
+        928,
+        927,
+        639,
+        737,
+        751
+      ]
+    },
+    {
+      "id": "q030",
+      "company": "META",
+      "question": "Why does Meta describe its Reality Labs investments as a risk?",
+      "gold_chunk_ids": [
+        691
+      ],
+      "answer": "They have generated only limited revenue and reduced operating margin and profitability, and the adverse financial impact is expected to continue for the foreseeable future",
+      "type": "risk",
+      "hit": 1.0,
+      "recall": 1.0,
+      "rr": 1.0,
+      "retrieved": [
+        691,
+        670,
+        669,
+        791,
+        689
+      ]
+    }
+  ]
+}
