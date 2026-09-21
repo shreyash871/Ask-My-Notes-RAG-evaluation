@@ -1,0 +1,4 @@
+{"id": "q001", "company": "AMZN", "question": "What are Amazon's three reportable segments?", "gold_chunk_ids": [151], "answer": "North America, International, and AWS", "type": "factual"}
+{"id": "q002", "company": "AMZN", "question": "What does Amazon's AWS segment sell?", "gold_chunk_ids": [346], "answer": "Compute, storage, database, and other services for start-ups, enterprises, government agencies, and academic institutions", "type": "factual"}
+{"id": "q003", "company": "AMZN", "question": "What were AWS net sales in fiscal year 2025?", "gold_chunk_ids": [230, 348, 349], "answer": "$128,725 million", "type": "numeric"}
+{"id": "q004", "company": "AMZN", "question": "What were Amazon's total consolidated net sales in fiscal year 2025?", "gold_chunk_ids": [230, 348, 349, 351], "answer": "$716,924 million", "type": "numeric"}
