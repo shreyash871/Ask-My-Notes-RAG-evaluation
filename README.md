@@ -4,6 +4,15 @@ A retrieval-augmented QA system, benchmarked on SEC 10-K annual filings, with an
 
 The point of this project is not that the RAG pipeline runs. It's that every claim about how well it works is backed by a number, and that the numbers themselves were audited.
 
+**🔗 Live demo:** [ask-my-notes-rag-evaluation-ask-10k.streamlit.app](https://ask-my-notes-rag-evaluation-ask-10k.streamlit.app)
+
+**Try asking:**
+- *What were AWS net sales in fiscal year 2025?*
+- *Which specific AI regulation does Microsoft cite as a risk to its European business?*
+- *What was Nvidia's revenue in 2025?* (not in the corpus, so it should say "I don't know")
+
+Every answer shows the retrieved source chunks it was built from. The app runs on a free tier and sleeps when idle, so the first question after a pause can take up to a minute.
+
 ---
 
 ## Results at a glance
@@ -163,22 +172,30 @@ These are the parts of the project that mattered most.
 pip install -r requirements.txt
 echo "GROQ_API_KEY=your_key" > .env
 
-python src/fetch_filings.py          # download 5 filings from EDGAR
-python src/ingest.py                 # parse, chunk, embed, build index
-python src/validate_eval.py          # check the eval set
+python -m streamlit run app.py       # local web app (uses the prebuilt index)
 
+python src/validate_eval.py          # check the eval set
 python src/eval_retrieval.py dense
 python src/eval_retrieval.py hybrid
 python src/eval_generation.py hybrid
 ```
 
-Edit the `User-Agent` email in `fetch_filings.py` first; EDGAR rejects requests without real contact details.
+The prebuilt index in `faiss_store/` is committed, so the app and evals run without rebuilding. To rebuild the corpus and index from scratch:
+
+```bash
+python src/fetch_filings.py          # download 5 filings from EDGAR
+python src/ingest.py                 # parse, chunk, embed, build index
+```
+
+Edit the `User-Agent` email in `fetch_filings.py` first; EDGAR rejects requests without real contact details. Note that rebuilding changes chunk IDs if the filings or chunking settings change, which would invalidate the gold labels in `eval/questions.jsonl`.
 
 Results are written to `eval/results/`, with the retrieval mode and chunk size in each filename.
 
 ## Repository layout
 
 ```
+app.py                 Streamlit web app
+faiss_store/           prebuilt index (rebuild with src/ingest.py)
 src/
   fetch_filings.py     EDGAR download
   parse.py             HTML to text, section extraction
