@@ -2,5 +2,4 @@ __pycache__/
 *.pyc
 .env
 venv/
-faiss_store/
 data/*.htm

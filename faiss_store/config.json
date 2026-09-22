@@ -1,0 +1,6 @@
+{
+  "chunk_size": 1500,
+  "overlap": 200,
+  "model": "all-MiniLM-L6-v2",
+  "n_chunks": 1263
+}
