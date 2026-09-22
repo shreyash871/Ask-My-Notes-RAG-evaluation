@@ -1,0 +1,9 @@
+requests
+beautifulsoup4
+lxml
+sentence-transformers
+faiss-cpu
+numpy
+rank-bm25
+groq
+python-dotenv
