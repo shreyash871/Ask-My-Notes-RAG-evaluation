@@ -9,28 +9,28 @@
   "k": 5,
   "overall": {
     "n": 30,
-    "hit@5": 0.8,
-    "recall@5": 0.574,
-    "mrr": 0.56
+    "hit@5": 0.867,
+    "recall@5": 0.607,
+    "mrr": 0.652
   },
   "by_type": {
     "factual": {
       "n": 10,
-      "hit@5": 0.7,
-      "recall@5": 0.508,
-      "mrr": 0.545
+      "hit@5": 0.8,
+      "recall@5": 0.558,
+      "mrr": 0.645
     },
     "numeric": {
       "n": 10,
-      "hit@5": 0.7,
-      "recall@5": 0.263,
-      "mrr": 0.46
+      "hit@5": 0.8,
+      "recall@5": 0.297,
+      "mrr": 0.56
     },
     "risk": {
       "n": 10,
       "hit@5": 1.0,
-      "recall@5": 0.95,
-      "mrr": 0.675
+      "recall@5": 0.967,
+      "mrr": 0.75
     }
   },
   "by_company": {
@@ -54,15 +54,15 @@
     },
     "META": {
       "n": 6,
-      "hit@5": 0.667,
-      "recall@5": 0.431,
-      "mrr": 0.408
+      "hit@5": 1.0,
+      "recall@5": 0.569,
+      "mrr": 0.742
     },
     "MSFT": {
       "n": 6,
       "hit@5": 1.0,
-      "recall@5": 0.533,
-      "mrr": 0.631
+      "recall@5": 0.561,
+      "mrr": 0.756
     }
   },
   "per_question": [
@@ -418,13 +418,14 @@
       "question": "How does Microsoft say foreign exchange rates affect its results?",
       "gold_chunk_ids": [
         1086,
+        1087,
         1095
       ],
       "answer": "Significant fluctuations between the U.S. dollar and foreign currencies could adversely affect revenue, expenses and results of operations, despite partial hedging",
       "type": "risk",
       "hit": 1.0,
-      "recall": 0.5,
-      "rr": 0.25,
+      "recall": 0.6666666666666666,
+      "rr": 1.0,
       "retrieved": [
         1087,
         1141,
@@ -438,6 +439,7 @@
       "company": "MSFT",
       "question": "Which specific AI regulation does Microsoft cite as a risk to its European business?",
       "gold_chunk_ids": [
+        1065,
         1066
       ],
       "answer": "The EU's AI Act, which may increase costs or affect the provision or operation of its AI models and services in Europe",
@@ -611,14 +613,15 @@
       "company": "META",
       "question": "What was Meta's Reality Labs revenue in 2025?",
       "gold_chunk_ids": [
+        791,
         820,
         890
       ],
       "answer": "$2,207 million",
       "type": "numeric",
-      "hit": 0.0,
-      "recall": 0.0,
-      "rr": 0.0,
+      "hit": 1.0,
+      "recall": 0.3333333333333333,
+      "rr": 1.0,
       "retrieved": [
         791,
         821,
@@ -654,13 +657,14 @@
       "company": "META",
       "question": "Which products are included in Meta's Family of Apps segment?",
       "gold_chunk_ids": [
+        623,
         960
       ],
-      "answer": "Facebook, Instagram, Messenger, WhatsApp, and other services",
+      "answer": "Facebook, Instagram, Messenger, Threads, WhatsApp, and other services",
       "type": "factual",
-      "hit": 0.0,
-      "recall": 0.0,
-      "rr": 0.0,
+      "hit": 1.0,
+      "recall": 0.5,
+      "rr": 1.0,
       "retrieved": [
         623,
         679,

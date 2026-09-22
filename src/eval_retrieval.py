@@ -38,6 +38,8 @@ def main():
     mode = sys.argv[1] if len(sys.argv) > 1 else "dense"
     print(f"MODE = {mode}")
     rows = [json.loads(l) for l in open(EVAL, encoding="utf-8") if l.strip()]
+    ids = [r["id"] for r in rows]
+    assert len(ids) == len(set(ids)), f"duplicate ids: {[i for i in ids if ids.count(i) > 1]}"
     r = Retriever(mode=mode)
 
     per_q = []
