@@ -210,3 +210,5 @@ eval/
   questions.jsonl      30 questions with gold chunk IDs
   results/             saved evaluation runs
 ```
+
+**🔗 Live demo:** https://ask-my-notes-rag-evaluation-ask-10k.streamlit.app
